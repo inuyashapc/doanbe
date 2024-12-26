@@ -37,6 +37,9 @@ app.post(
 );
 
 app.use(express.urlencoded({ extended: true }));
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 app.use('/api/', routes);
 // Sử dụng middleware Swagger
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
