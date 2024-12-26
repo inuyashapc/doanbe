@@ -45,7 +45,7 @@ app.use('/api/', routes);
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app
-  .listen(PORT, async function () {
+  .listen(PORT, '0.0.0.0', async function () {
     logger.info(
       `Express server is listening at http://localhost:${PORT} 🚀`
     );
