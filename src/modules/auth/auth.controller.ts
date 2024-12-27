@@ -77,7 +77,7 @@ const authController = {
         next(new NotFoundError('Email token not found'));
       }
       await authService.findEmail(emailToken);
-      res.redirect((process.env.FONT_END_URL as string) + '/login');
+      res.redirect(process.env.FONT_END_URL as string);
     } catch (error: any) {
       next(new CustomError(error?.message, 500));
     }
